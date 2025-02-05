@@ -50,23 +50,9 @@ module.exports = new Confidence.Store({
                                 host: '127.0.0.1',
                                 user: 'root',
                                 password: 'hapi',
-                                database: 'user',
-                                port: 3306,
-                                charset: 'utf8mb4'
-                            },
-                            pool: {
-                                min: 2,
-                                max: 10,
-                                createTimeoutMillis: 3000,
-                                acquireTimeoutMillis: 30000,
-                                idleTimeoutMillis: 30000,
-                                reapIntervalMillis: 1000,
-                                createRetryIntervalMillis: 100
+                                database: 'iut'
                             }
                         }
-                    },
-                    production: {
-                        migrateOnStart: false
                     }
                 }
             },
