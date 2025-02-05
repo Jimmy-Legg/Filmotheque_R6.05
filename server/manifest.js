@@ -38,25 +38,35 @@ module.exports = new Confidence.Store({
                 plugin: './plugins/swagger'
             },
             {
-                plugin  : '@hapipal/schwifty',
-                options : {
-                    $filter    : 'NODE_ENV',
-                    $default   : {},
-                    $base      : {
-                        migrateOnStart : true,
-                        knex           : {
-                            client     : 'mysql',
-                            connection : {
-                                host     : process.env.DB_HOST || '0.0.0.0',
-                                user     : process.env.DB_USER || 'root',
-                                password : process.env.DB_PASSWORD || 'hapi',
-                                database : process.env.DB_DATABASE || 'user',
-                                port     : process.env.DB_PORT || 3306
+                plugin: '@hapipal/schwifty',
+                options: {
+                    $filter: 'NODE_ENV',
+                    $default: {},
+                    $base: {
+                        migrateOnStart: true,
+                        knex: {
+                            client: 'mysql',
+                            connection: {
+                                host: '127.0.0.1',
+                                user: 'root',
+                                password: 'hapi',
+                                database: 'user',
+                                port: 3306,
+                                charset: 'utf8mb4'
+                            },
+                            pool: {
+                                min: 2,
+                                max: 10,
+                                createTimeoutMillis: 3000,
+                                acquireTimeoutMillis: 30000,
+                                idleTimeoutMillis: 30000,
+                                reapIntervalMillis: 1000,
+                                createRetryIntervalMillis: 100
                             }
                         }
                     },
-                    production : {
-                        migrateOnStart : false
+                    production: {
+                        migrateOnStart: false
                     }
                 }
             },

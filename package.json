@@ -20,8 +20,10 @@
     "@hapipal/haute-couture": "4.x.x",
     "@hapipal/schmervice": "^3.0.0",
     "@hapipal/schwifty": "6.x.x",
+    "csv-writer": "^1.6.0",
     "joi": "17.x.x",
     "mysql": "^2.18.1",
+    "nodemailer": "^6.10.0",
     "objection": "2.x.x"
   },
   "peerDependencies": {
