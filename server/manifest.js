@@ -31,7 +31,11 @@ module.exports = new Confidence.Store({
     register: {
         plugins: [
             {
-                plugin: '../lib', // Main plugin
+                plugin: '../lib', // Main plugin that will auto-register all services
+                options: {}
+            },
+            {
+                plugin: '@hapipal/schmervice',
                 options: {}
             },
             {
